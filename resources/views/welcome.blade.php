@@ -9,7 +9,9 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link href="{{asset('app.css')}}" rel="stylesheet" />
+        {{-- <link href="{{asset('app.css')}}" rel="stylesheet" /> --}}
+        @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
 
     
     </head>
@@ -20,6 +22,9 @@
                     <label class="block p-4">
                         <span class="block text-sm font-medium ">Email</span>
                         <input type="text" name='email' class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500" />
+                        @error('email')
+                            <div class="flex text-red-500">{{ $message }}</div>
+                        @enderror
                     </label>
                 </div>
         
@@ -28,6 +33,9 @@
                     <label class="block p-4">
                         <span class="block text-sm font-medium">First Name</span>
                         <input type="text" name='firstName' class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500" />
+                        @error('firstName')
+                            <div class="flex text-red-500">{{ $message }}</div>
+                        @enderror
                     </label>
                 </div>
 
@@ -35,6 +43,9 @@
                     <label class="block p-4">
                         <span class="block text-sm font-medium">Last Name</span>
                         <input type="text" name='lastName' class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500" />
+                        @error('lastName')
+                            <div class="flex text-red-500">{{ $message }}</div>
+                        @enderror
                     </label>
                 </div>
 
