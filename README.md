@@ -1,11 +1,15 @@
 # installation Instruction
 
-After cloning the repository, run the following command
+After cloning the repository, run the following command (after you CD into the repository on your machine):
 
-- `php artisan composer install` (or `sail composer install`)
+- `./vendor/bin/sail build`
 
-- `php artisan migrate` (or `sail artisan migrate`)
+- `./vendor/bin/sail up`
+
+- `php artisan composer install` (or `./vendor/bin/sail composer install`)
+
+- `php artisan migrate` (or `./vendor/bin/sail artisan migrate`)
 
 Then run the test suites with the following command
 
-- `php artisan test` (or `sail artisan test`)
+- `php artisan test` (or `./vendor/bin/sail artisan test`)
