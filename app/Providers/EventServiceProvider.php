@@ -25,16 +25,12 @@ class EventServiceProvider extends ServiceProvider
         ],
     ];
 
-    protected $observers = [
-        \App\Models\Message::class => [\App\Observers\MessageObserver::class],
-    ];
-
     /**
      * Register any events for your application.
      */
     public function boot(): void
     {
-        //
+        \App\Models\Message::observe(\App\Observers\MessageObserver::class);
     }
 
     /**

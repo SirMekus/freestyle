@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class UserMessageTest extends TestCase
 {
@@ -13,7 +14,7 @@ class UserMessageTest extends TestCase
      * @test
      */
     public function can_send_users_request(): void
-    {
+    {   
         $data = [
             'email'=> $this->faker->email,
             'firstName'=> $this->faker->firstName(),
@@ -23,11 +24,12 @@ class UserMessageTest extends TestCase
         $response = $this->withHeaders([
             'Accept' => 'application/json',
         ])->post(route("users"), $data);
-        // dd("done");
         
         $response->assertSuccessful();
-        // dd("ase");
-
         $this->assertDatabaseHas("messages", $data);
+
+        // Log::shouldReceive('info')
+        // ->once()
+        // ->with($data);
     }
 }

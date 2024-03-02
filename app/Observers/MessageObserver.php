@@ -7,8 +7,8 @@ use App\Models\Message;
 
 class MessageObserver
 {
-    public function created(Message $message)
+    public function created(Message $message): void
     {
-        event(new MessageEvent($message));
+        event(new MessageEvent($message->only("email", 'firstName', 'lastName')));
     }
 }

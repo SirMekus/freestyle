@@ -18,7 +18,7 @@ class MessageEvent
     /**
      * Create a new event instance.
      */
-    public function __construct(public Message $message)
+    public function __construct(public Message|Array $message)
     {
         //
     }

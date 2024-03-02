@@ -9,9 +9,6 @@ class MessageController extends Controller
 {
     public function __invoke(MessageRequest $request)
     {
-        // dd("djdj");
-        $request = $request->validated();
-
-        Message::create($request);
+        Message::create($request->validated());
     }
 }
